@@ -15,6 +15,7 @@ import "./selector/escapeSelector.js";
 import "./selector/uniqueSort.js";
 
 var preferredDoc = document,
+       // 判断节点是否被指定选择其选中，||是兼容写法
 	matches = documentElement.matches || documentElement.msMatchesSelector;
 
 ( function() {
