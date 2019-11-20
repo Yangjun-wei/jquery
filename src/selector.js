@@ -15,6 +15,7 @@ import "./selector/escapeSelector.js";
 import "./selector/uniqueSort.js";
 
 var preferredDoc = document,
+       // 判断节点是否被指定选择其选中，||是兼容写法
 	matches = documentElement.matches || documentElement.msMatchesSelector;
 
 ( function() {
@@ -151,9 +152,11 @@ function selectorError( msg ) {
 
 function find( selector, context, results, seed ) {
 	var m, i, elem, nid, match, groups, newSelector,
+	        // ownerDocument是document对象
 		newContext = context && context.ownerDocument,
 
 		// nodeType defaults to 9, since context defaults to document
+	        // 节点类型  数字表示
 		nodeType = context ? context.nodeType : 9;
 
 	results = results || [];
